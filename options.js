@@ -11,7 +11,7 @@ const els = {
   };
   
   // 기본 API 키
-  const DEFAULT_API_KEY = "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";
+  const DEFAULT_API_KEY = "";
   
   (async function load() {
     const conf = await chrome.storage.sync.get({
@@ -59,4 +59,5 @@ const els = {
     els.status.textContent = els.extension.checked ? "활성화됨" : "비활성화됨";
     setTimeout(()=> els.status.textContent="", 1500);
   });
+
   
