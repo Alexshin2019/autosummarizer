@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Auto Summarizer</title>
+  <style>
+    body {
+      width: 280px;
+      padding: 16px;
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size: 14px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .title {
+      font-weight: 600;
+      font-size: 16px;
+      color: #111;
+    }
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    .toggle-container:hover {
+      background: #eeeeee;
+    }
+    .toggle-label {
+      font-weight: 500;
+      color: #333;
+      margin-left: 8px;
+    }
+    .toggle-switch {
+      position: relative;
+      width: 48px;
+      height: 24px;
+      background: #ccc;
+      border-radius: 12px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .toggle-switch.active {
+      background: #4CAF50;
+    }
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: white;
+      top: 2px;
+      left: 2px;
+      transition: left 0.3s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .toggle-switch.active::after {
+      left: 26px;
+    }
+    .status {
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
+      text-align: center;
+    }
+    .status.success {
+      color: #4CAF50;
+    }
+    .status.error {
+      color: #f44336;
+    }
+    .button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 8px;
+      background: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .button:hover {
+      background: #1976D2;
+    }
+    .button.secondary {
+      background: #757575;
+    }
+    .button.secondary:hover {
+      background: #616161;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title">Auto Summarizer</div>
+  </div>
+
+  <div class="toggle-container" id="toggleContainer">
+    <div style="display: flex; align-items: center;">
+      <input type="checkbox" id="enableExtension" />
+      <span class="toggle-label">확장 프로그램 활성화</span>
+    </div>
+    <div class="toggle-switch" id="toggleSwitch"></div>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <button class="button" id="optionsBtn">⚙️ 설정</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Summarizer (3s)",
+  "version": "0.1.0",
+  "description": "페이지 입장 3초 후 자동 요약을 띄웁니다.",
+  "icons": {
+    "16": "images/pagesummary 36.png",
+    "48": "images/pagesummary 48.png",
+    "128": "images/pagesummary 128.png"
+  },
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Auto Summarizer",
+    "default_icon": {
+      "16": "images/pagesummary 36.png",
+      "48": "images/pagesummary 48.png",
+      "128": "images/pagesummary 128.png"
+    }
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
